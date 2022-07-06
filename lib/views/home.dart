@@ -4,6 +4,7 @@ import 'package:projekmakanan/model/resep.api.dart';
 import 'package:projekmakanan/model/resep.dart';
 import 'package:projekmakanan/views/detail_resep.dart';
 import 'package:projekmakanan/views/widget/resep_card.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key? key}) : super(key: key);
@@ -34,22 +35,24 @@ Future<void> getResep() async{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.grey,
+        backgroundColor: Colors.purple[500],
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(Icons.restaurant_menu, color: Colors.black,),
-            
-            SizedBox(width: 10),
-            Text('Resep Makanan', style: TextStyle(color: Colors.black),),
+            Padding(
+               padding: const EdgeInsets.only(right: 60),
+              child: Text('Resep Makanan', style: TextStyle(color: Colors.black),),
+            ),
             
           ],
         ),
       ),
+      backgroundColor: Colors.purple[400],
       body: _isLoading 
       ? Center(child: CircularProgressIndicator())
       : Container(
-        decoration: BoxDecoration(color: Colors.white ),
+        decoration: BoxDecoration(color: Colors.purple[400] ),
         child: ListView.builder(
           itemCount: _resep.length,
           itemBuilder: (context,index){
@@ -63,7 +66,8 @@ Future<void> getResep() async{
                 ),
                 onTap: () => {
                   Navigator.push(
-                    context, MaterialPageRoute(
+                    context,
+                     MaterialPageRoute(
                       builder: (context) => DetailResep(
                       name: _resep[index].name,
                      totalTime: _resep[index].totalTime,
@@ -71,8 +75,10 @@ Future<void> getResep() async{
                       images: _resep[index].images,
                       description:_resep[index].description,
                       videoUrl: _resep[index].videoUrl,
-                    ),)
-                    )
+                      instructions: _resep[index].instructions,
+                      sections: _resep[index].sections,
+                    ),
+                    ))
                 },
             );
           },

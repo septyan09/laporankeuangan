@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projekmakanan/views/beranda.dart';
 import 'package:projekmakanan/views/home.dart';
 
 void main() {
@@ -16,10 +17,10 @@ class MyApp extends StatelessWidget {
       title: 'Resep Makanan',
       debugShowCheckedModeBanner: false ,
       theme: ThemeData(
-          primarySwatch: Colors.red,
+          primarySwatch: Colors.grey,
           primaryColor: Colors.blue,
           textTheme: TextTheme(bodyText2: TextStyle(color: Colors.white))),
-      home: HomePage(),
+      home: Beranda(),
     );
   }
 }

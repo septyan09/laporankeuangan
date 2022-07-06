@@ -38,9 +38,9 @@ class _AkunState extends State<Akun> {
         Text('(190103196)', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),),
         Padding(
           padding: const EdgeInsets.only(top: 30),
-          child: Text('Kecap', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),),
+          child: Text('Muhammad Luthfi', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),),
         ),
-        Text('(69)', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),),
+        Text('(190103192)', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),),
       ]
       ),
     ),
